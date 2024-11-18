@@ -4,8 +4,8 @@ fetch(apiURL)
 .then((response) => response.json()) 
 .then((data) => {
     document.querySelector("h1").textContent = data.setup
-    function deliverPunchline(){
+    button = document.querySelector('#joke-button');
+    button.addEventListener('click', () => {
         document.querySelector("p").textContent = data.punchline
-    }
-    const timeout = setTimeout(deliverPunchline, 2000);
+    });
 });
